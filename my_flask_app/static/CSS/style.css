@@ -1,0 +1,31 @@
+        .navbar-custom {
+            background-color: transparent;
+            color: rgb(20, 19, 19);
+        }
+        .navbar-custom .navbar-brand,
+        .navbar-custom .nav-link,
+        .navbar-custom .btn {
+            color: rgb(20, 19, 19);
+        }
+        .navbar-custom .nav-link:hover,
+        .navbar-custom .btn:hover {
+            color: #ffcc00;
+        }
+        .navbar-toggler {
+            border-color: rgb(20, 19, 19);
+        }
+        .footer-custom {
+            background-color: transparent;
+            color: rgb(33, 32, 32);
+            padding: 10px 0;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        .footer-custom a {
+            color: white;
+        }
+        .footer-custom a:hover {
+            color: #ffcc00;
+        }
