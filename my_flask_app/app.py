@@ -6,7 +6,7 @@ from flask_migrate import Migrate
 
 # Initialize Flask app and configure settings
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'ridesha'  
+app.config['SECRET_KEY'] = 'adchgdngsghjgmjhedthncgstnxhtrdfyt'  
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///project.db' 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False  
 
@@ -223,6 +223,19 @@ def update_item(item_id):
             return redirect(url_for('update_item', item_id=item_id))
 
     return render_template('update.html', item=item)
+
+# Delete item route
+@app.route('/delete/<int:item_id>', methods=['POST'])
+@login_required
+def delete_item(item_id):
+    try:
+        item = StockItem.query.get_or_404(item_id)
+        db.session.delete(item)
+        db.session.commit()
+        flash('Item deleted successfully!', 'success')
+    except Exception as e:
+        flash(f'An error occurred: {str(e)}', 'danger')
+    return redirect(url_for('main'))
 
 # Run the application
 if __name__ == '__main__':
