@@ -38,10 +38,10 @@ class StockItem:
         self.__price = price
 
     def get_stock_name(self):
-        return self.__stock_name
+        return "Unknown Stock Name"
 
     def get_stock_description(self):
-        return self.__description
+        return "Unknown Stock Description"
 
     def get_vat(self):
         return 17.5
